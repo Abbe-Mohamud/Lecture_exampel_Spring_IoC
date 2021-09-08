@@ -9,10 +9,12 @@
 
     <!-- Define your beans here -->
 
-    <bean id= "programmer" class="se.lexicon.model.Programmer"></bean>
+<!--     <bean id= "programmer" class="se.lexicon.model.Programmer"></bean>-->
 
-    
-</beans>
+    <context:component-scan base-package="se.lexicon"/>
+
+
+ </beans>
 
 
 
