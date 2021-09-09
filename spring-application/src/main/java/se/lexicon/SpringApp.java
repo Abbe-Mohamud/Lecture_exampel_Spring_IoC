@@ -11,21 +11,29 @@ public class SpringApp
     public static void main( String[] args )
     {
 
-        // ClassPathXmlApplicationContext context =
-        //       new ClassPathXmlApplicationContext("applicationContext.xml");
+         ClassPathXmlApplicationContext context =
+              new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(EmployeeConfig.class);
+       // AnnotationConfigApplicationContext context =
+         //       new AnnotationConfigApplicationContext(EmployeeConfig.class);
 
 
         Employee programmer = context.getBean("programmer", Employee.class);
+
+        Employee salesPerson = context.getBean("salesPerson", Employee.class);
 
         String massage = programmer.getDescription();
         System.out.println("programmers description:  = " + massage);
 
 
-        Employee myProgrammer = new Programmer();
-        System.out.println(myProgrammer.getDescription());
+        //Employee myProgrammer = new Programmer();
+        //System.out.println(myProgrammer.getDescription());
+
+        int salary = programmer.getSalary();
+        System.out.println(salary);
+
+        int salary2 = salesPerson.getSalary();
+        System.out.println(salary2);
 
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -9,9 +9,20 @@
 
     <!-- Define your beans here -->
 
-<!--     <bean id= "programmer" class="se.lexicon.model.Programmer"></bean>-->
 
 
+    <bean id="RandomSalaryService" class="se.lexicon.service.RandomSalaryService"/>
+
+    <!-- Setter Injection-->
+    <bean id= "programmer" class="se.lexicon.model.Programmer">
+        <property name="salaryService" ref="RandomSalaryService"/>
+    </bean>
+
+
+    <!-- Constructor Injection-->
+    <bean id="salesPerson" class="se.lexicon.model.SalesPerson">
+        <constructor-arg ref="RandomSalaryService"/>
+    </bean>
 
 
  </beans>
