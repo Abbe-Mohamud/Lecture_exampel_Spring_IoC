@@ -1,8 +1,11 @@
 package se.lexicon.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import se.lexicon.service.RandomSalaryService;
 import se.lexicon.service.SalaryService;
 
+@Component
 public class Programmer implements Employee {
 
 
@@ -10,7 +13,7 @@ public class Programmer implements Employee {
 
     public Programmer() {
     }
-
+    @Autowired
     public void setSalaryService(SalaryService salaryService) {
         this.salaryService = salaryService;
     }

@@ -10,20 +10,24 @@
     <!-- Define your beans here -->
 
 
+<!--Not needed anymore. @Component above RandomSalaryService used now (Annotations).-->
+<!--    <bean id="RandomSalaryService" class="se.lexicon.service.RandomSalaryService"/>-->
 
-    <bean id="RandomSalaryService" class="se.lexicon.service.RandomSalaryService"/>
 
+<!--    Not needed anymore because of the @Autowired above setSalaryService in Programmer class.-->
     <!-- Setter Injection-->
-    <bean id= "programmer" class="se.lexicon.model.Programmer">
+    <!--<bean id= "programmer" class="se.lexicon.model.Programmer">
         <property name="salaryService" ref="RandomSalaryService"/>
-    </bean>
+    /bean><-->
 
-
+    <!--    Not needed anymore because of the @Autowired above setSalaryService in Programmer class.-->
     <!-- Constructor Injection-->
-    <bean id="salesPerson" class="se.lexicon.model.SalesPerson">
+    <!--<bean id="salesPerson" class="se.lexicon.model.SalesPerson">
         <constructor-arg ref="RandomSalaryService"/>
-    </bean>
+    </bean>-->
 
+    <!--To use Annotations you need this component scan.-->
+    <context:component-scan base-package="se.lexicon"/>
 
  </beans>
 
